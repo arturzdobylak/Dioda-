@@ -1,0 +1,31 @@
+int przycisk = 12;
+int diodaczerwona = 11;
+int diodazolta = 10;
+int diodazielona= 9;
+void setup() {
+  pinMode(przycisk, INPUT);
+  pinMode(diodaczerwona, OUTPUT);
+  pinMode(diodazolta, OUTPUT);
+  pinMode(diodazielona, OUTPUT);
+  digitalWrite(diodazielona, HIGH);
+}
+
+void loop() {
+  
+  if(digitalRead(przycisk) == HIGH)
+  {
+    delay(5000);
+    digitalWrite(diodazielona, LOW);
+    digitalWrite(diodazolta, HIGH);
+    delay(2000);
+    digitalWrite(diodazolta, LOW);
+    digitalWrite(diodaczerwona, HIGH);
+    delay(10000);
+    digitalWrite(diodazolta, HIGH);
+    digitalWrite(diodaczerwona, LOW);
+    delay(2000);
+    digitalWrite(diodazielona, HIGH);
+    digitalWrite(diodazolta, LOW);
+  }
+  
+}
